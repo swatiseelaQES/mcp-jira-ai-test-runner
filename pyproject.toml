@@ -1,0 +1,25 @@
+[project]
+name = "mcp-jira-ai-test-runner"
+version = "0.2.0"
+description = "Demo MCP server that turns mock Jira tickets into OpenAI-generated API tests and QA-facing test reports."
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.2.0",
+    "openai>=2.0.0",
+    "requests>=2.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "responses>=0.25.0",
+    "ruff>=0.8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
